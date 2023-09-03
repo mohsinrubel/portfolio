@@ -240,8 +240,131 @@ sonar-scanner -v
 You should see output indicating the version of Sonar Scanner installed.
 
 
-## setup remote machine
 ## configure jenkins
+
+* Log in to Jenkins:
+### Install Plugins
+ Log in with your Jenkins administrator or user account.
+
+* Go to Plugin Manager:
+
+ Click on "Manage Jenkins" in the left-hand sidebar.
+
+* Manage Plugins:
+
+In the "Manage Jenkins" page, click on "Manage Plugins."
+
+* Available Tab:
+
+In the "Manage Plugins" page, you'll see several tabs at the top. Click on the "Available" tab. This tab displays all the available plugins that you can install.
+
+* Search for the Plugin:
+
+In the "Filter" text box, type "SSH Plugin And  Build Pipeline." This will filter the available plugins to show the one you want to install.
+
+* Select the Plugin:
+
+Find the "SSH Plugin And  Build Pipeline" plugin in the list and check the checkbox next to it.
+
+* Install the Plugin:
+
+Scroll down to the bottom of the page, and click the "Install without restart" button. Jenkins will download and install the plugin for you.
+
+* Installation Progress:
+
+Jenkins will show the progress of the installation. Once it's completed, you'll see a message indicating that the plugin has been successfully installed.
+
+* Restart Jenkins (if needed):
+
+In some cases, Jenkins may ask you to restart to complete the installation. If prompted, click on the "Restart Jenkins when no jobs are running" checkbox and wait for Jenkins to restart.
+
+### Create Credential
+#### For Remote Machine
+Go to Credentials:
+
+Click on "Manage Jenkins" in the left-hand sidebar.
+
+* Manage Credentials:
+
+In the "Manage Jenkins" page, click on "Credentials" on the middle page . This will take you to the "Credentials" page, where you can manage various types of credentials.
+
+* Add Credentials:
+
+On the "Credentials" page click on "System global", you'll see a list of credentials if you've already added any. To add a new credential, click on the "Add Credentials" link on the top  side.
+
+* Choose Credential Type:
+
+In the "Kind" dropdown, select the type of credential you want to create. For a username and password combination, choose "Username with Password."
+
+Credential Information:
+
+Username: < Your machine username >
+ID: Optionally, you can provide a unique ID for the credential. This can be useful if you need to reference the credential in Jenkins pipelines or configurations.
+Description: Add a description to help identify the purpose or usage of this credential.
+Password: < give your machine login password > 
+Scope:
+
+The "Domain" field allows you to specify the scope or context in which the credential can be used. You can choose to store it globally (available to all jobs) or restrict it to a specific project or folder. The available options may depend on your Jenkins setup and installed plugins.
+
+* Add Credentials:
+
+After filling in the required information, click the "Add" button to create the credential.
+
+Confirmation:
+
+You should see a confirmation message indicating that the credential has been added successfully.
+#### For Git
+* Choose Credential Type:
+
+In the "Kind" dropdown, select the type of credential you want to create. For a username and password combination, choose "Username with Password."
+
+Credential Information:
+
+Username: < Your git username>
+ID: Optionally, you can provide a unique ID for the credential. This can be useful if you need to reference the credential in Jenkins pipelines or configurations.
+Description: Add a description to help identify the purpose or usage of this credential.
+Password: < give your git personal access token > 
+Scope:
+
+The "Domain" field allows you to specify the scope or context in which the credential can be used. You can choose to store it globally (available to all jobs) or restrict it to a specific project or folder. The available options may depend on your Jenkins setup and installed plugins.
+
+* Add Credentials:
+
+After filling in the required information, click the "Add" button to create the credential.
+
+Confirmation:
+
+You should see a confirmation message indicating that the credential has been added successfully.
+### Configure SSH remote hosts
+* Go to Configure System:
+
+Click on "Manage Jenkins" in the left-hand sidebar.
+
+* Configure System:
+
+In the "Manage Jenkins" page, click on "System" to access the global Jenkins configuration settings.
+
+* SSH Remote Hosts Configuration:
+
+Scroll down to find the "SSH remote hosts" section. In this section, you can define configurations for remote SSH hosts.
+
+* Add SSH Host Configuration:
+
+To add a new SSH host configuration, click on the "Add SSH Server" button. This will open a form where you can enter the SSH host details.
+
+* SSH Server Configuration:
+
+In the SSH host configuration form, fill in the following details
+
+Hostname: < Enter the hostname or IP address of the remote server >
+Port: < Enter Your SSH Port  >
+Credentials: Choose the SSH username and password credential that you created earlier, or you can use other types of credentials if needed.
+
+* Test Configuration:
+
+To ensure that your SSH host configuration is correct, you can click the "Check connection" button. Jenkins will attempt to connect to the remote server using the provided settings and report whether the connection was successful.
+
+
 ## crate update code job
 ## Create sonar-qube scan job
 ## Creade docker deploy job
