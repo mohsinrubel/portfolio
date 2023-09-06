@@ -366,7 +366,7 @@ Credentials: Choose the SSH username and password credential that you created ea
 To ensure that your SSH host configuration is correct, you can click the "Check connection" button. Jenkins will attempt to connect to the remote server using the provided settings and report whether the connection was successful.
 
 
-## crate update code job
+## create update code job
 ## Create sonar-qube scan job
 ## Creade docker deploy job
 ## Configure Pipeline
