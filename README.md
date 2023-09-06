@@ -1,4 +1,4 @@
-# jenkins-pipeline-potfolio
+# jenkins-pipeline-portfolio
 ![Alt text](https://github.com/mohsinrubel/jenkins-pipeline-potfolio/blob/master/Screenshot%20from%202023-09-03%2022-52-57.png)
 ## Setup Docker In Linux
 ### Install using the apt repository 
